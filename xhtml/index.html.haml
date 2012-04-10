@@ -1,0 +1,132 @@
+!!!
+%html{html_attrs}
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
+    %title Transdmin
+
+    / CSS
+    %link{:rel => 'stylesheet', :type => 'text/css', 
+      :media => 'screen', :href => 'style/css/transdmin.css'}
+
+    /[if IE 6]
+      %link{:rel => 'stylesheet', :type => 'text/css', 
+        :media => 'screen', :href => 'style/css/ie6.css'}
+
+    /[if IE 7]
+      %link{:rel => 'stylesheet', :type => 'text/css', 
+        :media => 'screen', :href => 'style/css/ie7.css'}
+
+    / JavaScripts
+    %script{:type => 'text/javascript', :src => 'style/js/jquery.js'}
+    %script{:type => 'text/javascript', :src => 'style/js/jNice.js'}
+
+  %body
+    #wrapper
+      -# h1 tag stays for the logo, you can use the a tag for linking the index page
+      %h1<
+        %a{:href => '#'}<
+          %span Transdmin Light
+
+      -# You can name the links with lowercase, they will be transformed to
+      -# uppercase by CSS, we prefered to name them with uppercase to have the
+      -# same effect with disabled stylesheet
+      %ul#mainNav
+        %li<
+          -# Use the 'active' class for the active menu item
+          %a.active{:href => '#'} DASHBOARD
+        %li<
+          %a{:href => '#'} ADMINISTRATION
+        %li<
+          %a{:href => '#'} DESIGN
+        %li<
+          %a{:href => '#'} OPTION
+        %li<
+          %a.logout{:href => '#'} LOGOUT
+
+      #containerHolder
+        #container
+          #sidebar
+            %ul.sideNav
+              %li<
+                %a{:href => '#'} Exchange
+              %li<
+                %a.active{:href => '#'} Print resources
+              %li<
+                %a{:href => '#'}&= 'Training & Support'
+              %li<
+                %a{:href => '#'} Books
+              %li<
+                %a{:href => '#'} Safari books online
+              %li<
+                %a{:href => '#'} Events
+
+        -# h2 stays for breadcrumbs
+        %h2<
+          %a{:href => '#'} Dashboard
+          &raquo; 
+          %a.active{:href => '#'} Print resources
+        
+        #main
+          %form.jNice{:action => ''}
+            %h3 Sample section
+            %table{:cellpadding => '0', :cellspacing => '0'}
+              %tr
+                %td Vivamus rutrum nibh in felis tristique vulputate
+                %td.action
+                  %a.view{:href => '#'} View
+                  %a.edit{:href => '#'} Edit
+                  %a.delete{:href => '#'} Delete
+              %tr
+                %td Duis adipiscing lorem iaculis nunc
+                %td.action
+                  %a.view{:href => '#'} View
+                  %a.edit{:href => '#'} Edit
+                  %a.delete{:href => '#'} Delete
+              %tr
+                %td Donec sit amet nisi ac magna varius tempus
+                %td.action
+                  %a.view{:href => '#'} View
+                  %a.edit{:href => '#'} Edit
+                  %a.delete{:href => '#'} Delete
+              %tr
+                %td Duis ultricies laoreet felis
+                %td.action
+                  %a.view{:href => '#'} View
+                  %a.edit{:href => '#'} Edit
+                  %a.delete{:href => '#'} Delete
+              %tr
+                %td Vivamus rutrum nibh in felis tristique vulputate
+                %td.action
+                  %a.view{:href => '#'} View
+                  %a.edit{:href => '#'} Edit
+                  %a.delete{:href => '#'} Delete
+
+            %h3 Another Section
+            %fieldset
+              %p<
+                %label Sample label:
+                %input{:type => 'text', :class => 'text-long'}
+              %p<
+                %label Sample label:
+                %input{:type => 'text', :class => 'text-medium'}
+              %p<
+                %label Sample label:
+                %input{:type => 'text', :class => 'text-small'}
+              %p
+                %label Sample label:
+                %select
+                  %option Select one
+                  %option Select two
+                  %option Select tree
+                  %option Select one
+                  %option Select two
+                  %option Select tree
+              %p
+                %label Sample label:
+                %textarea{:rows => '1', :cols => '1'}
+              %input{:type => 'submit', :value => 'Submit Query'}
+        .clear
+    
+    %p#footer 
+      Feel free to use and customize it. 
+      %a{:href => 'http://www.perspectived.com'} Credit is appreciated.

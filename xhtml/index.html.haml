@@ -27,44 +27,13 @@
         %a{:href => '#'}<
           %span Transdmin Light
 
-      -# You can name the links with lowercase, they will be transformed to
-      -# uppercase by CSS, we prefered to name them with uppercase to have the
-      -# same effect with disabled stylesheet
-      %ul#mainNav
-        %li<
-          -# Use the 'active' class for the active menu item
-          %a.active{:href => '#'} DASHBOARD
-        %li<
-          %a{:href => '#'} ADMINISTRATION
-        %li<
-          %a{:href => '#'} DESIGN
-        %li<
-          %a{:href => '#'} OPTION
-        %li<
-          %a.logout{:href => '#'} LOGOUT
+      =render_partial :header
 
       #containerHolder
         #container
-          #sidebar
-            %ul.sideNav
-              %li<
-                %a{:href => '#'} Exchange
-              %li<
-                %a.active{:href => '#'} Print resources
-              %li<
-                %a{:href => '#'}&= 'Training & Support'
-              %li<
-                %a{:href => '#'} Books
-              %li<
-                %a{:href => '#'} Safari books online
-              %li<
-                %a{:href => '#'} Events
+          =render_partial :sidebar
 
-        -# h2 stays for breadcrumbs
-        %h2<
-          %a{:href => '#'} Dashboard
-          &raquo; 
-          %a.active{:href => '#'} Print resources
+        =render_partial :breadcrumbs
         
         #main
           %form.jNice{:action => ''}
